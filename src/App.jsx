@@ -8,6 +8,7 @@ import NavItem from './components/ui/NavItem/NavItem';
 import IntroductionPage from './pages/Introduction/IntroductionPage';
 import TrailerPage from './pages/Trailer/TrailerPage';
 import TrailerVrPage from "./pages/Trailer/TrailerVrPage.jsx";
+import AuthPage from "./pages/Auth/AuthPage.jsx";
 
 import VideoModal from "./components/ui/Modal/VideoModal.jsx";
 
@@ -16,15 +17,33 @@ import logoRevealVideo from './assets/introduction/logoreveal.mp4';
 const navPages = [
     {id: 'intro', name: 'Introduction', href: '#intro'},
     {id: 'trailer', name: 'Trailer', href: '#trailer'},
-    {id: 'gameplay', name: 'Gameplay', href: '#gameplay'},
-    {id: 'artists', name: 'Artists', href: '#artists'},
-    {id: 'screenshots', name: 'Screenshots', href: '#screenshots'},
-    {id: 'wiki', name: 'Wiki', href: '#wiki'},
+    {id: 'auth', name: 'Login/Register', href: '#auth'},
 ];
 
 function App() {
     const [activePage, setActivePage] = useState('intro');
     const [isLogoModalOpen, setLogoModalOpen] = useState(false);
+    /*const [isAuthPage, setShowAuthPage] = useState(false);
+
+    const handleNavigation = (pageId) => {
+        setActivePage(pageId);
+        setShowAuthPage(false);
+    };
+
+    const openAuthPage = () => {
+        setActivePage('intro');
+        setShowAuthPage(true);
+    };*/
+
+    const navigateTo = (pageId) => {
+        setActivePage(pageId);
+
+        // Оновлюємо hash, щоб URL відповідав сторінці
+        const page = navPages.find(p => p.id === pageId);
+        if (page) {
+            window.location.hash = page.href;
+        }
+    };
 
     return (
         <div className="App">
@@ -37,10 +56,7 @@ function App() {
             <Header activePage={activePage}/>
             <Footer
                 activePage={activePage}
-                onLogoRevealClick={() => {
-                    setLogoModalOpen(true)
-                    console.log("CLICK")}
-                }
+                onLogoRevealClick={() => setLogoModalOpen(true)}
             />
 
             <nav className="sideNav">
@@ -51,8 +67,7 @@ function App() {
                         isActive={activePage === page.id}
                         onClick={(e) => {
                             e.preventDefault();
-                            setActivePage(page.id);
-                            window.location.hash = page.href;
+                            navigateTo(page.id);
                         }}
                         label={page.name}
                     />
@@ -62,6 +77,8 @@ function App() {
             {activePage === 'intro' && <IntroductionPage/>}
             {activePage === 'trailer' && <TrailerPage/> && <TrailerPage onNavigate={setActivePage}/>}
             {activePage === 'trailerVr' && <TrailerVrPage onNavigate={setActivePage}/>}
+            {activePage === 'auth' && <AuthPage onNavigate={setActivePage}/>}
+            {/*{setShowAuthPage && <AuthPage onNavigate={handleNavigation}/>}*/}
 
         </div>
     );

@@ -1,36 +1,87 @@
-import React from 'react'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, {useState} from 'react';
+import './App.css';
+
+import Header from './components/layout/Header/Header';
+import Footer from './components/layout/Footer/Footer';
+import NavItem from './components/ui/NavItem/NavItem';
+
+import IntroductionPage from './pages/Introduction/IntroductionPage';
+import TrailerPage from './pages/Trailer/TrailerPage';
+import TrailerVrPage from "./pages/Trailer/TrailerVrPage.jsx";
+import AuthPage from "./pages/Auth/AuthPage.jsx";
+
+import VideoModal from "./components/ui/Modal/VideoModal.jsx";
+
+import logoRevealVideo from './assets/introduction/logoreveal.mp4';
+
+const navPages = [
+    {id: 'intro', name: 'Introduction', href: '#intro'},
+    {id: 'trailer', name: 'Trailer', href: '#trailer'},
+    {id: 'auth', name: 'Login/Register', href: '#auth'},
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [activePage, setActivePage] = useState('intro');
+    const [isLogoModalOpen, setLogoModalOpen] = useState(false);
+    /*const [isAuthPage, setShowAuthPage] = useState(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const handleNavigation = (pageId) => {
+        setActivePage(pageId);
+        setShowAuthPage(false);
+    };
+
+    const openAuthPage = () => {
+        setActivePage('intro');
+        setShowAuthPage(true);
+    };*/
+
+    const navigateTo = (pageId) => {
+        setActivePage(pageId);
+
+        // Оновлюємо hash, щоб URL відповідав сторінці
+        const page = navPages.find(p => p.id === pageId);
+        if (page) {
+            window.location.hash = page.href;
+        }
+    };
+
+    return (
+        <div className="App">
+            <VideoModal
+                show={isLogoModalOpen}
+                onClose={() => setLogoModalOpen(false)}
+                localVideo={logoRevealVideo}
+            />
+
+            <Header activePage={activePage}/>
+            <Footer
+                activePage={activePage}
+                onLogoRevealClick={() => setLogoModalOpen(true)}
+            />
+
+            <nav className="sideNav">
+                {navPages.map(page => (
+                    <NavItem
+                        key={page.id}
+                        href={page.href}
+                        isActive={activePage === page.id}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            navigateTo(page.id);
+                        }}
+                        label={page.name}
+                    />
+                ))}
+            </nav>
+
+            {activePage === 'intro' && <IntroductionPage/>}
+            {activePage === 'trailer' && <TrailerPage/> && <TrailerPage onNavigate={setActivePage}/>}
+            {activePage === 'trailerVr' && <TrailerVrPage onNavigate={setActivePage}/>}
+            {activePage === 'auth' && <AuthPage onNavigate={setActivePage}/>}
+            {/*{setShowAuthPage && <AuthPage onNavigate={handleNavigation}/>}*/}
+
+        </div>
+    );
 }
 
-export default App
+export default App;

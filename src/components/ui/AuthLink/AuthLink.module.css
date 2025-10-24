@@ -1,0 +1,14 @@
+.authLink {
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.authLink:hover {
+    color: white;
+}

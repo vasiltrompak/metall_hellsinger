@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import styles from './ScreenshotsPage.module.css';
 
 import BottomNav from '../../components/ui/BottomNav/BottomNav';
@@ -21,7 +21,12 @@ import screen10 from '../../assets/screenshots/Slides/png_slide_10.jpg';
 
 const screenshots = [screen1, screen2, screen3, screen4, screen5, screen6, screen7, screen8, screen9, screen10];
 
-const ScreenshotsPage = ({ onNavigate }) => {
+const ScreenshotsPage = () => {
+    useEffect(() => {
+        document.title = "Metal: Hellsinger - Screenshots";
+    }, []);
+
+    const navigate = useNavigate();
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const nextSlide = () => {
@@ -37,7 +42,7 @@ const ScreenshotsPage = ({ onNavigate }) => {
     return (
         <div className={styles.page}>
             <video autoPlay muted loop className={styles.videoBg}>
-                <source src={videoBg} type="video/mp4" />
+                <source src={videoBg} type="video/mp4"/>
             </video>
 
             <main className={styles.content}>
@@ -76,15 +81,11 @@ const ScreenshotsPage = ({ onNavigate }) => {
             <footer className={styles.footerNav}>
                 <BottomNav
                     label="Gameplay"
-                    onClick={() => onNavigate('gameplay')}
+                    onClick={() => navigate('/gameplay')}
                 />
             </footer>
         </div>
     );
-};
-
-ScreenshotsPage.propTypes = {
-    onNavigate: PropTypes.func.isRequired,
 };
 
 export default ScreenshotsPage;

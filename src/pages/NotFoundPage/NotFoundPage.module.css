@@ -1,0 +1,54 @@
+.page {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.videoBg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.content {
+    z-index: 5;
+}
+
+.title {
+    font-family: 'Times New Roman', serif;
+    font-size: 10rem;
+    font-weight: bold;
+    color: #d42c2c;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    line-height: 1;
+}
+
+.subtitle {
+    font-family: 'Times New Roman', serif;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.footerNav {
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}

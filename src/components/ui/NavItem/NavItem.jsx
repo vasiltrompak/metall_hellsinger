@@ -1,26 +1,26 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from "prop-types";
 import styles from './NavItem.module.css';
 
-const NavItem = ({ isActive, href = '#', onClick, label }) => {
+const NavItem = ({ label, path }) => {
     return (
-        <a
-            href={href}
-            onClick={onClick}
-            className={`${styles.navItem} ${isActive ? styles.active : ''}`}
+        <NavLink
+            to={path}
+            className={({ isActive }) =>
+                `${styles.navItem} ${isActive ? styles.active : ''}`
+            }
         >
-            <span className={styles.label}>
+      <span className={styles.label}>
         {label}
       </span>
-        </a>
+        </NavLink>
     );
 };
 
 NavItem.propTypes = {
-    isActive: PropTypes.bool,
-    href: PropTypes.string,
-    onClick: PropTypes.func,
     label: PropTypes.string.isRequired,
-}
+    path: PropTypes.string.isRequired,
+};
 
 export default NavItem;

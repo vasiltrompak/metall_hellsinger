@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import styles from './GameplayPage.module.css';
 
 import BottomNav from '../../components/ui/BottomNav/BottomNav';
@@ -8,9 +8,14 @@ import VideoModal from '../../components/ui/Modal/VideoModal';
 import videoBg from '../../assets/backgrounds/gameplay_bg.mp4';
 import titleImg from '../../assets/gameplay/gameplay_title.png';
 import trailerImg from '../../assets/gameplay/gameplay_trailer.png';
-import videoplayerPlayButton from '../../assets/menu/videoplayer_play_button.png';
+import videoPlayerPlayButton from '../../assets/menu/videoplayer_play_button.png';
 
-const GameplayPage = ({onNavigate}) => {
+const GameplayPage = () => {
+    useEffect(() => {
+        document.title = "Metal: Hellsinger - Gameplay";
+    }, []);
+
+    const navigate = useNavigate();
     const [isModalOpen, setModalOpen] = useState(false);
     const YOUTUBE_VIDEO_ID = 'vig4_lsrpto';
 
@@ -38,7 +43,7 @@ const GameplayPage = ({onNavigate}) => {
                             <div className={styles.trailerThumbnailWrapper} onClick={openModal}>
                                 <img src={trailerImg} alt="Gameplay Trailer" className={styles.trailerImage}/>
                                 <img
-                                    src={videoplayerPlayButton}
+                                    src={videoPlayerPlayButton}
                                     alt="Play Trailer"
                                     className={styles.playButtonOverlay}
                                 />
@@ -71,16 +76,12 @@ const GameplayPage = ({onNavigate}) => {
                 <footer className={styles.footerNav}>
                     <BottomNav
                         label="Screenshots"
-                        onClick={() => onNavigate('screenshots')}
+                        onClick={() => navigate('/screenshots')}
                     />
                 </footer>
             </div>
         </>
     );
-};
-
-GameplayPage.propTypes = {
-    onNavigate: PropTypes.func.isRequired,
 };
 
 export default GameplayPage;

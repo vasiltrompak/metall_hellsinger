@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import styles from './AuthPage.module.css';
 
 import AuthInput from '../../components/ui/AuthInput/AuthInput';
@@ -12,7 +12,8 @@ import formFrameImg from '../../assets/register_login/plate.png';
 import titleImg from '../../assets/introduction/metallhellsinger_title.png';
 import closeIcon from '../../assets/menu/close_button.png';
 
-const AuthPage = ({ onNavigate }) => {
+const AuthPage = () => {
+    const navigate = useNavigate();
     const [isLoginView, setIsLoginView] = useState(true);
 
     const [formData, setFormData] = useState({
@@ -43,6 +44,7 @@ const AuthPage = ({ onNavigate }) => {
         } else {
             console.log('Registering with:', { userName, email, password });
         }
+        navigate('/introduction');
     };
 
     return (
@@ -53,7 +55,7 @@ const AuthPage = ({ onNavigate }) => {
 
             <IconButton
                 icon={closeIcon}
-                onClick={() => onNavigate('intro')}
+                onClick={() => navigate('/introduction')}
                 className={styles.closeButton}
             />
 
@@ -116,10 +118,6 @@ const AuthPage = ({ onNavigate }) => {
             </main>
         </div>
     );
-};
-
-AuthPage.propTypes = {
-    onNavigate: PropTypes.func.isRequired,
 };
 
 export default AuthPage;

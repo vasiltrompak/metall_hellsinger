@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 import styles from './Header.module.css';
 import IconButton from '../../ui/IconButton/IconButton';
 import accountIcon from '../../../assets/menu/account.png';
 
 const Header = () => {
+    const location = useLocation();
+
+    const showIcon = location.pathname === '/introduction';
+
     return (
         <header className={styles.header}>
-            <Link to="/auth">
-                <IconButton
-                    icon={accountIcon}
-                    className={styles.headerButton}
-                />
-            </Link>
+            {showIcon && (
+                <Link to="/auth">
+                    <IconButton
+                        icon={accountIcon}
+                        className={styles.headerButton}
+                    />
+                </Link>
+            )}
         </header>
     );
 };

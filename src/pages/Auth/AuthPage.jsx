@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './AuthPage.module.css';
 
@@ -13,6 +13,10 @@ import titleImg from '../../assets/introduction/metallhellsinger_title.png';
 import closeIcon from '../../assets/menu/close_button.png';
 
 const AuthPage = () => {
+    useEffect(() => {
+        document.title = 'Metal Hellsinger - Authentication';
+    }, []);
+
     const navigate = useNavigate();
     const [isLoginView, setIsLoginView] = useState(true);
 

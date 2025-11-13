@@ -23,7 +23,7 @@ const NotFoundPage = () => {
             <footer className={styles.footerNav}>
                 <BottomNav
                     label="Return Home"
-                    onClick={() => navigate('/introduction')}
+                    onClick={() => navigate('/')}
                 />
             </footer>
         </div>

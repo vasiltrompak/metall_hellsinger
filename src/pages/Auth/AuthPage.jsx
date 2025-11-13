@@ -48,7 +48,7 @@ const AuthPage = () => {
         } else {
             console.log('Registering with:', { userName, email, password });
         }
-        navigate('/introduction');
+        navigate('/');
     };
 
     return (
@@ -59,7 +59,7 @@ const AuthPage = () => {
 
             <IconButton
                 icon={closeIcon}
-                onClick={() => navigate('/introduction')}
+                onClick={() => navigate('/')}
                 className={styles.closeButton}
             />
 

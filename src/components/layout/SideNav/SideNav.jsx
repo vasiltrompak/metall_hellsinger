@@ -3,7 +3,7 @@ import NavItem from '../../ui/NavItem/NavItem';
 import './SideNav.css';
 
 const navPages = [
-    {id: 'intro', name: 'Introduction', path: '/introduction'},
+    {id: 'intro', name: 'Introduction', path: '/'},
     {id: 'trailer', name: 'Trailer', path: '/trailer'},
     {id: 'gameplay', name: 'Gameplay', path: '/gameplay'},
     {id: 'artists', name: 'Artists', path: '/artists'},

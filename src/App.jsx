@@ -18,7 +18,7 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<RootLayout/>}>
-                <Route path="introduction" index element={<IntroductionPage/>}/>
+                <Route index element={<IntroductionPage/>}/>
 
                 <Route path="trailer" element={<TrailerPage/>}/>
                 <Route path="trailer-vr" element={<TrailerVrPage/>}/>

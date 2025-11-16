@@ -1,6 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import styles from './NotFoundPage.module.css';
+
+import {useTitle} from "../../hooks/useTitle.js";
 
 import BottomNav from '../../components/ui/BottomNav/BottomNav';
 
@@ -9,10 +11,12 @@ import videoBg from '../../assets/backgrounds/introduction_bg.mp4';
 const NotFoundPage = () => {
     const navigate = useNavigate();
 
+    useTitle('Error 404');
+
     return (
         <div className={styles.page}>
             <video autoPlay muted loop className={styles.videoBg}>
-                <source src={videoBg} type="video/mp4" />
+                <source src={videoBg} type="video/mp4"/>
             </video>
 
             <main className={styles.content}>
@@ -23,7 +27,7 @@ const NotFoundPage = () => {
             <footer className={styles.footerNav}>
                 <BottomNav
                     label="Return Home"
-                    onClick={() => navigate('/introduction')}
+                    onClick={() => navigate('/')}
                 />
             </footer>
         </div>

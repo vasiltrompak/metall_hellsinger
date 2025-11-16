@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import styles from './AuthPage.module.css';
+
+import {useTitle} from "../../hooks/useTitle.js";
 
 import AuthInput from '../../components/ui/AuthInput/AuthInput';
 import AuthButton from '../../components/ui/AuthButton/AuthButton';
@@ -13,9 +15,7 @@ import titleImg from '../../assets/introduction/metallhellsinger_title.png';
 import closeIcon from '../../assets/menu/close_button.png';
 
 const AuthPage = () => {
-    useEffect(() => {
-        document.title = 'Metal Hellsinger - Authentication';
-    }, []);
+    useTitle('Metal: Hellsinger - Authentication');
 
     const navigate = useNavigate();
     const [isLoginView, setIsLoginView] = useState(true);
@@ -27,7 +27,7 @@ const AuthPage = () => {
         confirmPassword: '',
     });
 
-    const { userName, email, password, confirmPassword } = formData;
+    const {userName, email, password, confirmPassword} = formData;
 
     const handleChange = (e) => {
         setFormData((prevState) => ({
@@ -38,37 +38,37 @@ const AuthPage = () => {
 
     const toggleView = () => {
         setIsLoginView(!isLoginView);
-        setFormData({ userName: '', email: '', password: '', confirmPassword: '' });
+        setFormData({userName: '', email: '', password: '', confirmPassword: ''});
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isLoginView) {
-            console.log('Logging in with:', { email, password });
+            console.log('Logging in with:', {email, password});
         } else {
-            console.log('Registering with:', { userName, email, password });
+            console.log('Registering with:', {userName, email, password});
         }
-        navigate('/introduction');
+        navigate('/');
     };
 
     return (
         <div className={styles.page}>
             <video autoPlay muted loop className={styles.videoBg}>
-                <source src={videoBg} type="video/mp4" />
+                <source src={videoBg} type="video/mp4"/>
             </video>
 
             <IconButton
                 icon={closeIcon}
-                onClick={() => navigate('/introduction')}
+                onClick={() => navigate('/')}
                 className={styles.closeButton}
             />
 
             <main className={styles.authContainer}>
-                <img src={titleImg} alt="Metal Hellsinger" className={styles.titleLogo} />
+                <img src={titleImg} alt="Metal Hellsinger" className={styles.titleLogo}/>
 
                 <div
                     className={styles.formFrame}
-                    style={{ backgroundImage: `url(${formFrameImg})` }}
+                    style={{backgroundImage: `url(${formFrameImg})`}}
                 >
                     <form className={styles.form} onSubmit={handleSubmit}>
 

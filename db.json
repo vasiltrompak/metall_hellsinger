@@ -1,0 +1,178 @@
+{
+  "artists": [
+    {
+      "id": "tatiana",
+      "name": "Tatiana Shmaluk",
+      "band": "Jinjer",
+      "songs": [
+        {
+          "name": "Burial at Night",
+          "videoId": "PiD6_pPT8W0"
+        }
+      ],
+      "gridImage": "/assets/artists/tatiana_shmayluk.png",
+      "btnOff": "/assets/artists/tatiana_shmayluk_button_1.png",
+      "btnOn": "/assets/artists/tatiana_shmayluk_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/tatiana.jpg"
+    },
+    {
+      "id": "bjorn",
+      "name": "Björn Strid",
+      "band": "Soilwork",
+      "songs": [
+        {
+          "name": "Dissolution",
+          "videoId": "FTQ5akx7syQ"
+        }
+      ],
+      "gridImage": "/assets/artists/bjorn_strid.png",
+      "btnOff": "/assets/artists/bjorn_strid_button_1.png",
+      "btnOn": "/assets/artists/bjorn_strid_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/bjorn.jpg"
+    },
+    {
+      "id": "matt",
+      "name": "Matt Heafy",
+      "band": "Trivium",
+      "songs": [
+        {
+          "name": "This Devastation",
+          "videoId": "HidvYgF9-8Q"
+        }
+      ],
+      "gridImage": "/assets/artists/matt_heafy.png",
+      "btnOff": "/assets/artists/matt_heafy_button_1.png",
+      "btnOn": "/assets/artists/matt_heafy_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/matt.jpg"
+    },
+    {
+      "id": "mikael",
+      "name": "Mikael Stanne",
+      "band": "Dark Tranquillity",
+      "songs": [
+        {
+          "name": "Through You",
+          "videoId": "3Cf5VjO4rfA"
+        },
+        {
+          "name": "This Is the End",
+          "videoId": "vtNEEd3ykuQ"
+        },
+        {
+          "name": "Blood and Law",
+          "videoId": "eU6fuUwZuWY"
+        }
+      ],
+      "gridImage": "/assets/artists/mikael_stanne.png",
+      "btnOff": "/assets/artists/mikael_stanne_button_1.png",
+      "btnOn": "/assets/artists/mikael_stanne_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/mikeal.jpg"
+    },
+    {
+      "id": "serj",
+      "name": "Serj Tankian",
+      "band": "System of a Down",
+      "songs": [
+        {
+          "name": "No Tomorrow",
+          "videoId": "CVyPO_tR540"
+        }
+      ],
+      "gridImage": "/assets/artists/serj_tankian.png",
+      "btnOff": "/assets/artists/serj_tankian_button_1.png",
+      "btnOn": "/assets/artists/serj_tankian_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/serj.jpg"
+    },
+    {
+      "id": "dennis",
+      "name": "Dennis Lyxzén",
+      "band": "Refused & INVSN",
+      "songs": [
+        {
+          "name": "Silence No More",
+          "videoId": "8q2fnTCXrEs"
+        }
+      ],
+      "gridImage": "/assets/artists/dennis_lyxen.png",
+      "btnOff": "/assets/artists/dennis_lyxen_button_1.png",
+      "btnOn": "/assets/artists/dennis_lyxen_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/dennis.jpg"
+    },
+    {
+      "id": "randy",
+      "name": "Randy Blythe",
+      "band": "Lamb of God",
+      "songs": [
+        {
+          "name": "Acheron",
+          "videoId": "THV2b2tHEQE"
+        }
+      ],
+      "gridImage": "/assets/artists/randy_blythe.png",
+      "btnOff": "/assets/artists/randy_blythe_button_1.png",
+      "btnOn": "/assets/artists/randy_blythe_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/randy.jpg"
+    },
+    {
+      "id": "james",
+      "name": "James Dorton",
+      "band": "Whitechapel",
+      "songs": [
+        {
+          "name": "Poetry of Cinder",
+          "videoId": "jt3_-e9MjQ0"
+        }
+      ],
+      "gridImage": "/assets/artists/james_dorton.png",
+      "btnOff": "/assets/artists/james_dorton_button_1.png",
+      "btnOn": "/assets/artists/james_dorton_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/james.jpg"
+    },
+    {
+      "id": "christina",
+      "name": "Christina Scabbia",
+      "band": "Lacuna Coil",
+      "songs": [
+        {
+          "name": "Dream of the Beast",
+          "videoId": "8ugDtmwP_3s"
+        }
+      ],
+      "gridImage": "/assets/artists/christina_scabbia.png",
+      "btnOff": "/assets/artists/cristina_scabbia_button_1.png",
+      "btnOn": "/assets/artists/cristina_scabbia_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/christina.jpg"
+    },
+    {
+      "id": "will",
+      "name": "Will Ramos",
+      "band": "Lorna Shore",
+      "songs": [
+        {
+          "name": "Leviathan",
+          "videoId": "79d_QYKiC48"
+        }
+      ],
+      "gridImage": "/assets/artists/will_ramos.png",
+      "btnOff": "/assets/artists/will_rumos_button_1.png",
+      "btnOn": "/assets/artists/will_rumos_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/will.jpg"
+    },
+    {
+      "id": "alissa",
+      "name": "Alissa White-Gluz",
+      "band": "Arch Enemy",
+      "songs": [
+        {
+          "name": "Stygia",
+          "videoId": "cpJ0jBTdP70"
+        }
+      ],
+      "gridImage": "/assets/artists/alissa_white_gluz.png",
+      "btnOff": "/assets/artists/alissa_white_gluz_button_1.png",
+      "btnOn": "/assets/artists/alissa_white_gluz_button_2.png",
+      "mainImage": "/assets/artists/backgrounds/alissa.jpg"
+    }
+  ],
+  "users": []
+}

@@ -8,7 +8,7 @@ import {useTitle} from "../../hooks/useTitle.js";
 import ArtistButton from '../../components/ui/ArtistButton/ArtistButton';
 
 import videoBg from '../../assets/backgrounds/artists_bg.mp4';
-import titleImg from '/assets/artists/artists_title.png';
+import titleImg from '/assets/artists/artists_title.webp';
 
 const ArtistsPage = () => {
     const navigate = useNavigate();

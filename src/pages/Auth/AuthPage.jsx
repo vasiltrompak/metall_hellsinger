@@ -10,9 +10,9 @@ import AuthLink from '../../components/ui/AuthLink/AuthLink';
 import IconButton from '../../components/ui/IconButton/IconButton';
 
 import videoBg from '../../assets/backgrounds/register_login_bg.mp4';
-import formFrameImg from '../../assets/register_login/plate.png';
-import titleImg from '../../assets/introduction/metallhellsinger_title.png';
-import closeIcon from '../../assets/menu/close_button.png';
+import formFrameImg from '../../assets/register_login/plate.webp';
+import titleImg from '../../assets/introduction/metallhellsinger_title.webp';
+import closeIcon from '../../assets/menu/close_button.webp';
 
 const AuthPage = () => {
     useTitle('Metal: Hellsinger - Authentication');

@@ -5,13 +5,13 @@ import VideoModal from '../../components/ui/Modal/VideoModal';
 import {useTitle} from "../../hooks/useTitle.js";
 
 import videoBg from '../../assets/backgrounds/modding_bg.mp4';
-import titleImg from '../../assets/modding/modding_title.png';
-import vidImg from '../../assets/modding/modding_vid.png';
-import steamImg from '../../assets/modding/steam.png';
-import packageFrame from '../../assets/modding/package_frame.png';
-import pdfFrame from '../../assets/modding/pdf_frame.png';
-import videoFrame from '../../assets/modding/video_frame.png';
-import videoPlayerButton from '../../assets/menu/videoplayer_play_button.png';
+import titleImg from '../../assets/modding/modding_title.webp';
+import vidImg from '../../assets/modding/modding_vid.webp';
+import steamImg from '../../assets/modding/steam.webp';
+import packageFrame from '../../assets/modding/package_frame.webp';
+import pdfFrame from '../../assets/modding/pdf_frame.webp';
+import videoFrame from '../../assets/modding/video_frame.webp';
+import videoPlayerButton from '../../assets/menu/videoplayer_play_button.webp';
 
 const ModdingPage = () => {
     useTitle('Metal: Hellsinger - Modding');
@@ -114,7 +114,7 @@ const ModdingPage = () => {
 
                         <div className={styles.linksContainer}>
                             <a
-                                href="/MHModdingPackage1.0.zip"
+                                href="https://github.com/vasiltrompak/metall_hellsinger/releases/download/zip/MHModdingPackage1.0.zip"
                                 download
                                 className={styles.modLink}
                                 style={{backgroundImage: `url(${packageFrame})`}}

@@ -5,10 +5,10 @@ import VideoModal from '../../components/ui/Modal/VideoModal';
 import BottomNav from '../../components/ui/BottomNav/BottomNav';
 
 import videoBg from '../../assets/backgrounds/trailer_bg.mp4';
-import titleImg from '../../assets/trailer/trailer_title.png';
-import subTitleImg from '../../assets/trailer/metallhellsingervr_title.png';
-import contentImg from '../../assets/trailer/tailervrvid.jpg';
-import videoPlayerButton from '../../assets/menu/videoplayer_play_button.png';
+import titleImg from '../../assets/trailer/trailer_title.webp';
+import subTitleImg from '../../assets/trailer/metallhellsingervr_title.webp';
+import contentImg from '../../assets/trailer/tailervrvid.webp';
+import videoPlayerButton from '../../assets/menu/videoplayer_play_button.webp';
 
 const TrailerPage = () => {
     useEffect(() => {

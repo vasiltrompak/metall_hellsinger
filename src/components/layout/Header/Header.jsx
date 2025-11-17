@@ -3,12 +3,12 @@ import {Link, useLocation} from 'react-router-dom';
 
 import styles from './Header.module.css';
 import IconButton from '../../ui/IconButton/IconButton';
-import accountIcon from '../../../assets/menu/account.png';
+import accountIcon from '../../../assets/menu/account.webp';
 
 const Header = () => {
     const location = useLocation();
 
-    const showIcon = location.pathname === '/introduction';
+    const showIcon = location.pathname === '/';
 
     return (
         <header className={styles.header}>

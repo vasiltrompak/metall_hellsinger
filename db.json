@@ -10,10 +10,10 @@
           "videoId": "PiD6_pPT8W0"
         }
       ],
-      "gridImage": "/assets/artists/tatiana_shmayluk.png",
-      "btnOff": "/assets/artists/tatiana_shmayluk_button_1.png",
-      "btnOn": "/assets/artists/tatiana_shmayluk_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/tatiana.jpg"
+      "gridImage": "/assets/artists/tatiana_shmayluk.webp",
+      "btnOff": "/assets/artists/tatiana_shmayluk_button_1.webp",
+      "btnOn": "/assets/artists/tatiana_shmayluk_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/tatiana.webp"
     },
     {
       "id": "bjorn",
@@ -25,10 +25,10 @@
           "videoId": "FTQ5akx7syQ"
         }
       ],
-      "gridImage": "/assets/artists/bjorn_strid.png",
-      "btnOff": "/assets/artists/bjorn_strid_button_1.png",
-      "btnOn": "/assets/artists/bjorn_strid_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/bjorn.jpg"
+      "gridImage": "/assets/artists/bjorn_strid.webp",
+      "btnOff": "/assets/artists/bjorn_strid_button_1.webp",
+      "btnOn": "/assets/artists/bjorn_strid_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/bjorn.webp"
     },
     {
       "id": "matt",
@@ -40,10 +40,10 @@
           "videoId": "HidvYgF9-8Q"
         }
       ],
-      "gridImage": "/assets/artists/matt_heafy.png",
-      "btnOff": "/assets/artists/matt_heafy_button_1.png",
-      "btnOn": "/assets/artists/matt_heafy_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/matt.jpg"
+      "gridImage": "/assets/artists/matt_heafy.webp",
+      "btnOff": "/assets/artists/matt_heafy_button_1.webp",
+      "btnOn": "/assets/artists/matt_heafy_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/matt.webp"
     },
     {
       "id": "mikael",
@@ -63,10 +63,10 @@
           "videoId": "eU6fuUwZuWY"
         }
       ],
-      "gridImage": "/assets/artists/mikael_stanne.png",
-      "btnOff": "/assets/artists/mikael_stanne_button_1.png",
-      "btnOn": "/assets/artists/mikael_stanne_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/mikeal.jpg"
+      "gridImage": "/assets/artists/mikael_stanne.webp",
+      "btnOff": "/assets/artists/mikael_stanne_button_1.webp",
+      "btnOn": "/assets/artists/mikael_stanne_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/mikeal.webp"
     },
     {
       "id": "serj",
@@ -78,10 +78,10 @@
           "videoId": "CVyPO_tR540"
         }
       ],
-      "gridImage": "/assets/artists/serj_tankian.png",
-      "btnOff": "/assets/artists/serj_tankian_button_1.png",
-      "btnOn": "/assets/artists/serj_tankian_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/serj.jpg"
+      "gridImage": "/assets/artists/serj_tankian.webp",
+      "btnOff": "/assets/artists/serj_tankian_button_1.webp",
+      "btnOn": "/assets/artists/serj_tankian_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/serj.webp"
     },
     {
       "id": "dennis",
@@ -93,10 +93,10 @@
           "videoId": "8q2fnTCXrEs"
         }
       ],
-      "gridImage": "/assets/artists/dennis_lyxen.png",
-      "btnOff": "/assets/artists/dennis_lyxen_button_1.png",
-      "btnOn": "/assets/artists/dennis_lyxen_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/dennis.jpg"
+      "gridImage": "/assets/artists/dennis_lyxen.webp",
+      "btnOff": "/assets/artists/dennis_lyxen_button_1.webp",
+      "btnOn": "/assets/artists/dennis_lyxen_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/dennis.webp"
     },
     {
       "id": "randy",
@@ -108,10 +108,10 @@
           "videoId": "THV2b2tHEQE"
         }
       ],
-      "gridImage": "/assets/artists/randy_blythe.png",
-      "btnOff": "/assets/artists/randy_blythe_button_1.png",
-      "btnOn": "/assets/artists/randy_blythe_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/randy.jpg"
+      "gridImage": "/assets/artists/randy_blythe.webp",
+      "btnOff": "/assets/artists/randy_blythe_button_1.webp",
+      "btnOn": "/assets/artists/randy_blythe_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/randy.webp"
     },
     {
       "id": "james",
@@ -123,10 +123,10 @@
           "videoId": "jt3_-e9MjQ0"
         }
       ],
-      "gridImage": "/assets/artists/james_dorton.png",
-      "btnOff": "/assets/artists/james_dorton_button_1.png",
-      "btnOn": "/assets/artists/james_dorton_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/james.jpg"
+      "gridImage": "/assets/artists/james_dorton.webp",
+      "btnOff": "/assets/artists/james_dorton_button_1.webp",
+      "btnOn": "/assets/artists/james_dorton_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/james.webp"
     },
     {
       "id": "christina",
@@ -138,10 +138,10 @@
           "videoId": "8ugDtmwP_3s"
         }
       ],
-      "gridImage": "/assets/artists/christina_scabbia.png",
-      "btnOff": "/assets/artists/cristina_scabbia_button_1.png",
-      "btnOn": "/assets/artists/cristina_scabbia_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/christina.jpg"
+      "gridImage": "/assets/artists/christina_scabbia.webp",
+      "btnOff": "/assets/artists/cristina_scabbia_button_1.webp",
+      "btnOn": "/assets/artists/cristina_scabbia_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/christina.webp"
     },
     {
       "id": "will",
@@ -153,10 +153,10 @@
           "videoId": "79d_QYKiC48"
         }
       ],
-      "gridImage": "/assets/artists/will_ramos.png",
-      "btnOff": "/assets/artists/will_rumos_button_1.png",
-      "btnOn": "/assets/artists/will_rumos_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/will.jpg"
+      "gridImage": "/assets/artists/will_ramos.webp",
+      "btnOff": "/assets/artists/will_rumos_button_1.webp",
+      "btnOn": "/assets/artists/will_rumos_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/will.webp"
     },
     {
       "id": "alissa",
@@ -168,10 +168,10 @@
           "videoId": "cpJ0jBTdP70"
         }
       ],
-      "gridImage": "/assets/artists/alissa_white_gluz.png",
-      "btnOff": "/assets/artists/alissa_white_gluz_button_1.png",
-      "btnOn": "/assets/artists/alissa_white_gluz_button_2.png",
-      "mainImage": "/assets/artists/backgrounds/alissa.jpg"
+      "gridImage": "/assets/artists/alissa_white_gluz.webp",
+      "btnOff": "/assets/artists/alissa_white_gluz_button_1.webp",
+      "btnOn": "/assets/artists/alissa_white_gluz_button_2.webp",
+      "mainImage": "/assets/artists/backgrounds/alissa.webp"
     }
   ],
   "users": []

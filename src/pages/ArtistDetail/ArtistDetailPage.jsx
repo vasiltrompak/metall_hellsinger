@@ -10,11 +10,10 @@ import VideoModal from '../../components/ui/Modal/VideoModal';
 import Loader from "../../components/layout/Loader/Loader.jsx";
 
 import videoBg from '../../assets/backgrounds/artists_bg.mp4';
-import closeIcon from '../../assets/menu/close_button.png';
-import centerLogo from '../../assets/introduction/bg_frame1.png';
-import musicPlayIcon from '../../assets/menu/videoplayer_play_button.png';
-import arrowIcon from '../../assets/menu/logo_reveal_button.png';
-import titleImg from "/assets/artists/artists_title.png";
+import closeIcon from '../../assets/menu/close_button.webp';
+import centerLogo from '../../assets/introduction/bg_frame1.webp';
+import musicPlayIcon from '../../assets/menu/videoplayer_play_button.webp';
+import arrowIcon from '../../assets/menu/logo_reveal_button.webp';
 
 const ArtistDetailPage = () => {
     const {artistId} = useParams();
@@ -117,7 +116,7 @@ const ArtistDetailPage = () => {
                 />
 
                 <main className={styles.content}>
-                    <img src={titleImg} alt="Artists" className={styles.pageTitle}/>
+                    <img src={"/assets/artists/artists_title.webp"} alt="Artists" className={styles.pageTitle}/>
                     {renderContent()}
                 </main>
             </div>

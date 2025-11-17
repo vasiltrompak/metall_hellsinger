@@ -8,9 +8,9 @@ import BottomNav from '../../components/ui/BottomNav/BottomNav';
 import VideoModal from '../../components/ui/Modal/VideoModal';
 
 import videoBg from '../../assets/backgrounds/gameplay_bg.mp4';
-import titleImg from '../../assets/gameplay/gameplay_title.png';
-import trailerImg from '../../assets/gameplay/gameplay_trailer.png';
-import videoPlayerPlayButton from '../../assets/menu/videoplayer_play_button.png';
+import titleImg from '../../assets/gameplay/gameplay_title.webp';
+import trailerImg from '../../assets/gameplay/gameplay_trailer.webp';
+import videoPlayerPlayButton from '../../assets/menu/videoplayer_play_button.webp';
 
 const GameplayPage = () => {
     useTitle("Metal: Hellsinger - Gameplay");

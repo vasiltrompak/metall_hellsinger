@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import styles from './BottomNav.module.css';
 
-import navIcon from '../../../assets/menu/next_page_button.png';
+import navIcon from '../../../assets/menu/next_page_button.webp';
 
 const BottomNav = ({ label, onClick }) => {
     return (

@@ -4,8 +4,8 @@ import styles from './IntroductionPage.module.css';
 import {useTitle} from "../../hooks/useTitle.js";
 
 import videoBg from '../../assets/backgrounds/introduction_bg.mp4';
-import titleImg from '../../assets/introduction/metallhellsinger_title.png';
-import buyNowImg from '../../assets/introduction/buy_now.png';
+import titleImg from '../../assets/introduction/metallhellsinger_title.webp';
+import buyNowImg from '../../assets/introduction/buy_now.webp';
 
 const IntroductionPage = () => {
     useTitle("Metal: Hellsinger - Introduction");

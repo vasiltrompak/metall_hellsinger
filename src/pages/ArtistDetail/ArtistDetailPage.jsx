@@ -17,9 +17,12 @@ import arrowIcon from '../../assets/menu/logo_reveal_button.webp';
 
 const ArtistDetailPage = () => {
     const {artistId} = useParams();
+
     const navigate = useNavigate();
 
-    const {data: artist, loading, error} = useFetch(`http://localhost:3001/artists/${artistId}`);
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const {data: artist, loading, error} = useFetch(`${apiUrl}/artists/${artistId}`);
+
     const [isModalOpen, setModalOpen] = useState(false);
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
 

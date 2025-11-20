@@ -6,6 +6,7 @@ import {useFetch} from "../../hooks/useFetch.js";
 import {useTitle} from "../../hooks/useTitle.js";
 
 import ArtistButton from '../../components/ui/ArtistButton/ArtistButton';
+import Loader from "../../components/layout/Loader/Loader.jsx";
 
 import videoBg from '../../assets/backgrounds/artists_bg.mp4';
 import titleImg from '/assets/artists/artists_title.webp';
@@ -15,10 +16,11 @@ const ArtistsPage = () => {
 
     useTitle('Metal: Hellsinger - Artists');
 
-    const {data: artists, loading, error} = useFetch('http://localhost:3001/artists');
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const {data: artists, loading, error} = useFetch(`${apiUrl}/artists`);
 
     if (loading) {
-        return <div className={styles.loadingText}>Завантаження...</div>;
+        return <Loader/>;
     }
 
     if (error) {

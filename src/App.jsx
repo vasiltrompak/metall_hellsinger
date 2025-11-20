@@ -14,6 +14,7 @@ import ScreenshotsPage from "./pages/Screenshots/ScreenshotsPage.jsx";
 import ArtistsPage from "./pages/Artists/ArtistsPage.jsx";
 import ArtistDetailPage from "./pages/ArtistDetail/ArtistDetailPage.jsx";
 import ModdingPage from "./pages/Modding/ModdingPage.jsx";
+import AccountSuccessPage from "./pages/AccountSuccess/AccountSuccessPage.jsx";
 
 function App() {
     return (
@@ -29,6 +30,8 @@ function App() {
                 <Route path="artists/:artistId" element={<ArtistDetailPage/>}/>
                 <Route path="modding" element={<ModdingPage/>}/>
                 <Route path="auth" element={<AuthPage/>}/>
+                <Route path="profile" element={<AccountSuccessPage/>}/>
+
             </Route>
 
             <Route>

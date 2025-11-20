@@ -8,7 +8,9 @@ import Loader from "../../layout/Loader/Loader.jsx";
 
 const ArtistSidebar = () => {
     const navigate = useNavigate();
-    const {data: artistsData, loading, error} = useFetch('http://localhost:3001/artists');
+
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const {data: artistsData, loading, error} = useFetch(`${apiUrl}artists/`);
 
     if (loading) {
         return <Loader/>;

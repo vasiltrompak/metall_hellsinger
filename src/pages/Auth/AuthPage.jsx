@@ -20,6 +20,8 @@ const AuthPage = () => {
     const navigate = useNavigate();
     const [isLoginView, setIsLoginView] = useState(true);
 
+    const apiUrl = import.meta.env.VITE_API_URL;
+
     const [formData, setFormData] = useState({
         userName: '',
         email: '',
@@ -41,14 +43,44 @@ const AuthPage = () => {
         setFormData({userName: '', email: '', password: '', confirmPassword: ''});
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (isLoginView) {
-            console.log('Logging in with:', {email, password});
-        } else {
-            console.log('Registering with:', {userName, email, password});
+
+        if (!isLoginView && password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
         }
-        navigate('/');
+
+        const endpoint = isLoginView ? '/login' : '/register';
+
+        const payload = isLoginView
+            ? {username: userName, password}
+            : {username: userName, email, password};
+
+        try {
+            const response = await fetch(`${apiUrl}${endpoint}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload),
+                credentials: 'include'
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                if (isLoginView) {
+                    navigate('/profile');
+                } else {
+                    alert('Registration successful! Please login.');
+                    setIsLoginView(true);
+                }
+            } else {
+                alert(data.message || 'Something went wrong');
+            }
+        } catch (error) {
+            console.error('Auth error:', error);
+            alert('Server connection error');
+        }
     };
 
     return (
@@ -72,22 +104,23 @@ const AuthPage = () => {
                 >
                     <form className={styles.form} onSubmit={handleSubmit}>
 
+                        <AuthInput
+                            label="User Name"
+                            name="userName"
+                            value={userName}
+                            onChange={handleChange}
+                        />
+
                         {!isLoginView && (
                             <AuthInput
-                                label="User Name"
-                                name="userName"
-                                value={userName}
+                                label="E-Mail Address"
+                                type="email"
+                                name="email"
+                                value={email}
                                 onChange={handleChange}
                             />
                         )}
 
-                        <AuthInput
-                            label="E-Mail Address"
-                            type="email"
-                            name="email"
-                            value={email}
-                            onChange={handleChange}
-                        />
                         <AuthInput
                             label="Password"
                             type="password"

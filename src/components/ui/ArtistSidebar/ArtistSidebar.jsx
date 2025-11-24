@@ -10,7 +10,7 @@ const ArtistSidebar = () => {
     const navigate = useNavigate();
 
     const apiUrl = import.meta.env.VITE_API_URL;
-    const {data: artistsData, loading, error} = useFetch(`${apiUrl}artists/`);
+    const {data: artistsData, loading, error} = useFetch(`${apiUrl}/artists/`);
 
     if (loading) {
         return <Loader/>;

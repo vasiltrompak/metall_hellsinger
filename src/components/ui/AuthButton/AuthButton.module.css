@@ -21,3 +21,10 @@
     transform: scale(1.03);
     filter: brightness(1.2);
 }
+
+.authButton:active,
+.authButton:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}

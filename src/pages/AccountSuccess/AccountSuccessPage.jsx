@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from './AccountSuccessPage.module.css';
 
 import {useTitle} from "../../hooks/useTitle.js";
 import IconButton from '../../components/ui/IconButton/IconButton';
+import Loader from "../../components/layout/Loader/Loader.jsx";
 
 import videoBg from '../../assets/backgrounds/register_login_bg.mp4';
 import formFrameImg from '../../assets/register_login/plate.webp';
@@ -20,9 +21,42 @@ import checkboxOn from '../../assets/menu/icon_menu_on_button.webp';
 const AccountSuccessPage = () => {
     useTitle('Metal: Hellsinger - Account Success');
     const navigate = useNavigate();
+    const apiUrl = import.meta.env.VITE_API_URL;
+
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const [agreedMetal, setAgreedMetal] = useState(true);
     const [agreedFuncom, setAgreedFuncom] = useState(false);
+
+    useEffect(() => {
+        fetch(`${apiUrl}/auth/check`, {credentials: 'include'})
+            .then(res => res.json())
+            .then(data => {
+                if (data.loggedIn) {
+                    setUser(data.user);
+                } else {
+                    navigate('/auth');
+                }
+            })
+            .catch(() => navigate('/auth'))
+            .finally(() => setLoading(false));
+    }, [navigate, apiUrl]);
+
+    const handleLogout = async () => {
+        try {
+            await fetch(`${apiUrl}/logout`, {
+                method: 'POST',
+                credentials: 'include'
+            });
+            navigate('/auth');
+        } catch (error) {
+            console.error("Logout failed", error);
+        }
+    };
+
+    if (loading) return <Loader/>;
+    if (!user) return null;
 
     return (
         <div className={styles.page}>
@@ -51,7 +85,7 @@ const AccountSuccessPage = () => {
                             className={styles.emailHolder}
                             style={{backgroundImage: `url(${inputBg})`}}
                         >
-                            exemple@mail.com
+                            {user.email || user.username}
                         </div>
 
                         <div className={styles.agreements}>
@@ -93,7 +127,7 @@ const AccountSuccessPage = () => {
                             <span className={styles.btnText}>BECOME A FOLLOWER</span>
                         </button>
 
-                        <button onClick={() => navigate('/')} className={styles.logoutLink}>
+                        <button onClick={handleLogout} className={styles.logoutLink}>
                             Logout
                         </button>
 

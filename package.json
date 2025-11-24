@@ -9,9 +9,17 @@
     "lint": "eslint --ignore-pattern 'node_modules/*'",
     "preview": "vite preview",
     "prepare": "husky",
-    "server": "json-server --watch db.json --port 3001"
+    "server": "node server.js",
+    "db:init": "node initDB.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.15.3",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

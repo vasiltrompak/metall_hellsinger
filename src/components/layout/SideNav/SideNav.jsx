@@ -8,9 +8,6 @@ const navPages = [
     {id: 'gameplay', name: 'Gameplay', path: '/gameplay'},
     {id: 'artists', name: 'Artists', path: '/artists'},
     {id: 'modding', name: 'Modding', path: '/modding'},
-    // { id: 'wiki', name: 'Wiki', path: '/wiki' }, //
-    {id: 'auth', name: 'Login / Register', path: '/auth'},
-    {id: 'profile', name: 'Profile', path: '/profile'}
 ];
 
 const SideNav = () => {

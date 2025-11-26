@@ -30,7 +30,7 @@ const initDB = async () => {
                 VARCHAR
             (
                 50
-            ) NOT NULL UNIQUE,
+            ) BINARY NOT NULL UNIQUE,
                 password VARCHAR
             (
                 255

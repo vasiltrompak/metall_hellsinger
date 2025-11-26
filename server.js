@@ -19,6 +19,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/register', async (req, res) => {
     const { username, password, email } = req.body;
+
+    if (!username || !password || !email) {
+        return res.json({ success: false, message: 'Всі поля обов\'язкові для заповнення' });
+    }
+
+    if (password.length < 6) {
+        return res.json({ success: false, message: 'Пароль занадто короткий (мін. 6 символів)' });
+    }
+
+    if (username.length < 3) {
+        return res.json({ success: false, message: 'Ім\'я користувача занадто коротке' });
+    }
+
     try {
         const [existing] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
         if (existing.length > 0) {
@@ -41,7 +54,7 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
-        const [rows] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
+        const [rows] = await db.query('SELECT * FROM users WHERE BINARY username = ?', [username]);
 
         if (rows.length === 0) {
             return res.json({ success: false, message: 'Невірний логін або пароль' });

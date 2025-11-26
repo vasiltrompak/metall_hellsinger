@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from './AuthPage.module.css';
 
@@ -21,6 +21,17 @@ const AuthPage = () => {
     const [isLoginView, setIsLoginView] = useState(true);
 
     const apiUrl = import.meta.env.VITE_API_URL;
+
+    useEffect(() => {
+        fetch(`${apiUrl}/auth/check`, { credentials: 'include' })
+            .then(res => res.json())
+            .then(data => {
+                if (data.loggedIn) {
+                    navigate('/profile');
+                }
+            })
+            .catch(err => console.error("Помилка перевірки:", err));
+    }, [navigate, apiUrl]);
 
     const [formData, setFormData] = useState({
         userName: '',
@@ -46,8 +57,38 @@ const AuthPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!userName.trim() || !password.trim()) {
+            alert("Будь ласка, заповніть всі поля!");
+            return;
+        }
+
+        const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
+        if (!usernameRegex.test(userName)) {
+            alert("Ім'я користувача має бути від 3 до 20 символів і містити лише букви, цифри або '_'");
+            return;
+        }
+
+        if (!isLoginView) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Введіть коректний Email!");
+                return;
+            }
+        }
+
+        const passwordDigitRegex = /\d/;
+        if (password.length < 6) {
+            alert("Пароль має бути не менше 6 символів!");
+            return;
+        }
+
+        if (!isLoginView && !passwordDigitRegex.test(password)) {
+            alert("Пароль має містити хоча б одну цифру!");
+            return;
+        }
+
         if (!isLoginView && password !== confirmPassword) {
-            alert("Passwords do not match!");
+            alert("Паролі не співпадають!");
             return;
         }
 

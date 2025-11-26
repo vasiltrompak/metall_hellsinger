@@ -3,7 +3,7 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
     line-height: 0;
 }
 
@@ -13,4 +13,11 @@
 
 .iconButton img {
     display: block;
+}
+
+.iconButton:active,
+.iconButton:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }

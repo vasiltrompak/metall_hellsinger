@@ -1,86 +1,38 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {Routes, Route} from "react-router-dom";
 import './App.css';
 
-import Header from './components/layout/Header/Header';
-import Footer from './components/layout/Footer/Footer';
-import NavItem from './components/ui/NavItem/NavItem';
+import RootLayout from "./components/layout/RootLayout/RootLayout.jsx";
 
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
 import IntroductionPage from './pages/Introduction/IntroductionPage';
 import TrailerPage from './pages/Trailer/TrailerPage';
 import TrailerVrPage from "./pages/Trailer/TrailerVrPage.jsx";
 import AuthPage from "./pages/Auth/AuthPage.jsx";
-
-import VideoModal from "./components/ui/Modal/VideoModal.jsx";
-
-import logoRevealVideo from './assets/introduction/logoreveal.mp4';
-
-const navPages = [
-    {id: 'intro', name: 'Introduction', href: '#intro'},
-    {id: 'trailer', name: 'Trailer', href: '#trailer'},
-    {id: 'auth', name: 'Login/Register', href: '#auth'},
-];
+import GameplayPage from "./pages/Gameplay/GameplayPage.jsx";
+import ScreenshotsPage from "./pages/Screenshots/ScreenshotsPage.jsx";
+import ArtistsPage from "./pages/Artists/ArtistsPage.jsx";
+import ArtistDetailPage from "./pages/ArtistDetail/ArtistDetailPage.jsx";
 
 function App() {
-    const [activePage, setActivePage] = useState('intro');
-    const [isLogoModalOpen, setLogoModalOpen] = useState(false);
-    /*const [isAuthPage, setShowAuthPage] = useState(false);
-
-    const handleNavigation = (pageId) => {
-        setActivePage(pageId);
-        setShowAuthPage(false);
-    };
-
-    const openAuthPage = () => {
-        setActivePage('intro');
-        setShowAuthPage(true);
-    };*/
-
-    const navigateTo = (pageId) => {
-        setActivePage(pageId);
-
-        // Оновлюємо hash, щоб URL відповідав сторінці
-        const page = navPages.find(p => p.id === pageId);
-        if (page) {
-            window.location.hash = page.href;
-        }
-    };
-
     return (
-        <div className="App">
-            <VideoModal
-                show={isLogoModalOpen}
-                onClose={() => setLogoModalOpen(false)}
-                localVideo={logoRevealVideo}
-            />
+        <Routes>
+            <Route path="/" element={<RootLayout/>}>
+                <Route index element={<IntroductionPage/>}/>
 
-            <Header activePage={activePage}/>
-            <Footer
-                activePage={activePage}
-                onLogoRevealClick={() => setLogoModalOpen(true)}
-            />
+                <Route path="trailer" element={<TrailerPage/>}/>
+                <Route path="trailer-vr" element={<TrailerVrPage/>}/>
+                <Route path="gameplay" element={<GameplayPage/>}/>
+                <Route path="screenshots" element={<ScreenshotsPage/>}/>
+                <Route path="artists" element={<ArtistsPage/>}/>
+                <Route path="artists/:artistId" element={<ArtistDetailPage/>}/>
+                <Route path="auth" element={<AuthPage/>}/>
+            </Route>
 
-            <nav className="sideNav">
-                {navPages.map(page => (
-                    <NavItem
-                        key={page.id}
-                        href={page.href}
-                        isActive={activePage === page.id}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            navigateTo(page.id);
-                        }}
-                        label={page.name}
-                    />
-                ))}
-            </nav>
-
-            {activePage === 'intro' && <IntroductionPage/>}
-            {activePage === 'trailer' && <TrailerPage/> && <TrailerPage onNavigate={setActivePage}/>}
-            {activePage === 'trailerVr' && <TrailerVrPage onNavigate={setActivePage}/>}
-            {activePage === 'auth' && <AuthPage onNavigate={setActivePage}/>}
-            {/*{setShowAuthPage && <AuthPage onNavigate={handleNavigation}/>}*/}
-
-        </div>
+            <Route>
+                <Route path="*" element={<NotFoundPage/>}/>
+            </Route>
+        </Routes>
     );
 }
 

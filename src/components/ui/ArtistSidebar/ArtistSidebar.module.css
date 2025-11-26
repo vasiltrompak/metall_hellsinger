@@ -1,0 +1,51 @@
+.sidebar {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button {
+    display: block;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.imgOff,
+.imgOn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease;
+}
+
+.imgOn {
+    opacity: 0;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button.active .imgOn {
+    opacity: 1;
+}
+.button.active .imgOff {
+    opacity: 0;
+}
+
+.imgOn {
+    opacity: 0;
+}

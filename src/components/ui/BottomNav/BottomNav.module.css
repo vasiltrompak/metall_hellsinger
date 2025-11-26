@@ -45,3 +45,10 @@
     visibility: visible;
     transform: translateX(-50%) scale(1.5);
 }
+
+.navButton:active,
+.navButton:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}

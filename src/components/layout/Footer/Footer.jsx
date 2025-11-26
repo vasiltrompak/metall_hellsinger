@@ -5,10 +5,11 @@ import IconButton from '../../ui/IconButton/IconButton';
 
 import styles from './Footer.module.css';
 
-import playMusicIcon from '../../../assets/menu/play_music_button.png';
+import musicIconOn from '../../../assets/menu/play_music_button_on.png';
+import musicIconOff from '../../../assets/menu/play_music_button.png';
 import logoRevealIcon from '../../../assets/menu/logo_reveal_button.png';
 
-const Footer = ({activePage, onLogoRevealClick}) => {
+const Footer = ({activePage, onLogoRevealClick, isMusicPlaying, onMusicToggle}) => {
     // console.log('Footer rendered with onLogoRevealClick:', onLogoRevealClick);
 
     return (
@@ -21,8 +22,8 @@ const Footer = ({activePage, onLogoRevealClick}) => {
                 />
             )}
             <IconButton
-                icon={playMusicIcon}
-                onClick={() => console.log('Play music')}
+                icon={isMusicPlaying ? musicIconOn : musicIconOff}
+                onClick={onMusicToggle}
                 className={styles.footerButton}
             />
         </footer>
@@ -32,6 +33,8 @@ const Footer = ({activePage, onLogoRevealClick}) => {
 Footer.propTypes = {
     activePage: PropTypes.string.isRequired,
     onLogoRevealClick: PropTypes.func,
+    isMusicPlaying: PropTypes.bool.isRequired,
+    onMusicToggle: PropTypes.func.isRequired
 };
 
 Footer.defaultProps = {

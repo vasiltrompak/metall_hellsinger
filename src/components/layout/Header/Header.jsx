@@ -1,31 +1,27 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import {Link, useLocation} from 'react-router-dom';
 
 import styles from './Header.module.css';
 import IconButton from '../../ui/IconButton/IconButton';
 import accountIcon from '../../../assets/menu/account.png';
 
-const Header = ({activePage, onAccountClick}) => {
+const Header = () => {
+    const location = useLocation();
+
+    const showIcon = location.pathname === '/introduction';
+
     return (
         <header className={styles.header}>
-            {activePage === 'intro' && (
-                <IconButton
-                    icon={accountIcon}
-                    onClick={onAccountClick}
-                    className={styles.headerButton}
-                />
+            {showIcon && (
+                <Link to="/auth">
+                    <IconButton
+                        icon={accountIcon}
+                        className={styles.headerButton}
+                    />
+                </Link>
             )}
         </header>
     );
 };
-
-Header.propTypes = {
-    activePage: PropTypes.string.isRequired,
-    onAccountClick: PropTypes.func,
-};
-
-Header.defaultProps = {
-    onAccountClick: () => {},
-}
 
 export default Header;

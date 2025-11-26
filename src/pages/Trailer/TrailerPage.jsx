@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import styles from './TrailerPage.module.css';
 import VideoModal from '../../components/ui/Modal/VideoModal';
 import BottomNav from '../../components/ui/BottomNav/BottomNav';
@@ -10,7 +10,12 @@ import subTitleImg from '../../assets/introduction/metallhellsinger_title.png';
 import contentImg from '../../assets/trailer/trailervid.png';
 import videoPlayerButton from '../../assets/menu/videoplayer_play_button.png';
 
-const TrailerPage = ({onNavigate}) => {
+const TrailerPage = () => {
+    useEffect(() => {
+        document.title = "Metal: Hellsinger - Trailer";
+    }, []);
+
+    const navigate = useNavigate();
     const [isModalOpen, setModalOpen] = useState(false);
 
     const YOUTUBE_VIDEO_ID = 'jFAFzl_Tr7s';
@@ -48,16 +53,12 @@ const TrailerPage = ({onNavigate}) => {
                 <footer className={styles.footerNav}>
                     <BottomNav
                         label="Trailer VR"
-                        onClick={() => onNavigate('trailerVr')}
+                        onClick={() => navigate('/trailer-vr')}
                     />
                 </footer>
             </div>
         </>
     );
-};
-
-TrailerPage.propTypes = {
-    onNavigate: PropTypes.func.isRequired,
 };
 
 export default TrailerPage;

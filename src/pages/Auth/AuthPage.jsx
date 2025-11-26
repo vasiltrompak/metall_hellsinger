@@ -122,6 +122,7 @@ const AuthPage = () => {
             console.error('Auth error:', error);
             alert('Server connection error');
         }
+        navigate('/introduction');
     };
 
     return (

@@ -11,7 +11,7 @@ export default defineConfig({
         baseUrl: 'http://localhost:5173',
         setupNodeEvents(on, config) {
         },
-        viewportWidth: 1280,
-        viewportHeight: 720,
+        viewportWidth: 1920,
+        viewportHeight: 1080,
     },
 });

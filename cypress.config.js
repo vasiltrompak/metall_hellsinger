@@ -1,14 +1,14 @@
-import { defineConfig } from "cypress";
+import {defineConfig} from "cypress";
 
 export default defineConfig({
-  component: {
-    devServer: {
-      framework: "react",
-      bundler: "vite",
+    component: {
+        devServer: {
+            framework: "react",
+            bundler: "vite",
+        },
     },
-  },
     e2e: {
-        baseUrl: 'http://localhost:5173',
+        baseUrl: process.env.CLIENT_URL || 'http://localhost:5173',
         setupNodeEvents(on, config) {
         },
         viewportWidth: 1920,

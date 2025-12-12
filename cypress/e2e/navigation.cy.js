@@ -7,7 +7,7 @@ describe('Global Navigation Flow', () => {
 
     it('navigates through all sidebar links', () => {
         cy.contains('Introduction').should('be.visible')
-        cy.url().should('eq', 'http://localhost:5173/')
+        cy.url().should('eq', process.env.CLIENT_URL)
 
         cy.get('nav').contains('Trailer').click()
         cy.url().should('include', '/trailer')

@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "prepare": "husky",
     "server": "node server.js",
-    "db:init": "node initDB.js"
+    "db:init": "node initDB.js",
+    "tests": "npx cypress open"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

@@ -1,16 +1,33 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {artistsData} from '../../../data/artistsData';
+import {NavLink, useNavigate} from 'react-router-dom';
 import styles from './ArtistSidebar.module.css';
 
+import {useFetch} from '../../../hooks/useFetch';
+
+import Loader from "../../layout/Loader/Loader.jsx";
+
 const ArtistSidebar = () => {
+    const navigate = useNavigate();
+
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const {data: artistsData, loading, error} = useFetch(`${apiUrl}/artists/`);
+
+    if (loading) {
+        return <Loader/>;
+    }
+
+    if (error) {
+        navigate('/404');
+        return null;
+    }
+
     return (
         <nav className={styles.sidebar}>
-            {artistsData.map(artist => (
+            {artistsData && artistsData.map(artist => (
                 <NavLink
                     key={artist.id}
                     to={`/artists/${artist.id}`}
-                    className={({ isActive }) =>
+                    className={({isActive}) =>
                         `${styles.button} ${isActive ? styles.active : ''}`
                     }
                 >

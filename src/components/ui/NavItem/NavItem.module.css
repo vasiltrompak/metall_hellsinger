@@ -4,7 +4,7 @@
     height: 60px;
     margin: -2px 0;
 
-    background-image: url('../../../assets/menu/icon_menu_off_button.png');
+    background-image: url('../../../assets/menu/icon_menu_off_button.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -16,7 +16,7 @@
 
 .navItem:hover,
 .navItem.active {
-    background-image: url('../../../assets/menu/icon_menu_on_button.png');
+    background-image: url('../../../assets/menu/icon_menu_on_button.webp');
 }
 
 .label {
@@ -31,7 +31,7 @@
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
 
-    background-image: url('../../../assets/menu/text_background.png');
+    background-image: url('../../../assets/menu/text_background.webp');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;

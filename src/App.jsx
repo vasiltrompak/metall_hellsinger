@@ -4,7 +4,7 @@ import './App.css';
 
 import RootLayout from "./components/layout/RootLayout/RootLayout.jsx";
 
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
+import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
 import IntroductionPage from './pages/Introduction/IntroductionPage';
 import TrailerPage from './pages/Trailer/TrailerPage';
 import TrailerVrPage from "./pages/Trailer/TrailerVrPage.jsx";
@@ -13,6 +13,8 @@ import GameplayPage from "./pages/Gameplay/GameplayPage.jsx";
 import ScreenshotsPage from "./pages/Screenshots/ScreenshotsPage.jsx";
 import ArtistsPage from "./pages/Artists/ArtistsPage.jsx";
 import ArtistDetailPage from "./pages/ArtistDetail/ArtistDetailPage.jsx";
+import ModdingPage from "./pages/Modding/ModdingPage.jsx";
+import AccountSuccessPage from "./pages/AccountSuccess/AccountSuccessPage.jsx";
 
 function App() {
     return (
@@ -26,7 +28,10 @@ function App() {
                 <Route path="screenshots" element={<ScreenshotsPage/>}/>
                 <Route path="artists" element={<ArtistsPage/>}/>
                 <Route path="artists/:artistId" element={<ArtistDetailPage/>}/>
+                <Route path="modding" element={<ModdingPage/>}/>
                 <Route path="auth" element={<AuthPage/>}/>
+                <Route path="profile" element={<AccountSuccessPage/>}/>
+
             </Route>
 
             <Route>

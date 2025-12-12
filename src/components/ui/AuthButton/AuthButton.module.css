@@ -1,5 +1,5 @@
 .authButton {
-    background-image: url('../../../assets/register_login/input_field_3.png');
+    background-image: url('../../../assets/register_login/input_field_3.webp');
     background-size: 100% 100%;
     background-color: transparent;
     border: none;
@@ -20,4 +20,11 @@
 .authButton:hover {
     transform: scale(1.03);
     filter: brightness(1.2);
+}
+
+.authButton:active,
+.authButton:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }

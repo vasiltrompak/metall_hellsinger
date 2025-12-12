@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styles from './VideoModal.module.css';
 import IconButton from '../IconButton/IconButton';
 
-import closeIcon from '../../../assets/menu/close_button.png';
+import closeIcon from '../../../assets/menu/close_button.webp';
 
 const VideoModal = ({show, onClose, videoId, localVideo}) => {
     if (!show) {

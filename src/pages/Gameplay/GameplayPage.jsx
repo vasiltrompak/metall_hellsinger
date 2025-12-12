@@ -1,19 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from './GameplayPage.module.css';
+
+import {useTitle} from "../../hooks/useTitle.js";
 
 import BottomNav from '../../components/ui/BottomNav/BottomNav';
 import VideoModal from '../../components/ui/Modal/VideoModal';
 
 import videoBg from '../../assets/backgrounds/gameplay_bg.mp4';
-import titleImg from '../../assets/gameplay/gameplay_title.png';
-import trailerImg from '../../assets/gameplay/gameplay_trailer.png';
-import videoPlayerPlayButton from '../../assets/menu/videoplayer_play_button.png';
+import titleImg from '../../assets/gameplay/gameplay_title.webp';
+import trailerImg from '../../assets/gameplay/gameplay_trailer.webp';
+import videoPlayerPlayButton from '../../assets/menu/videoplayer_play_button.webp';
 
 const GameplayPage = () => {
-    useEffect(() => {
-        document.title = "Metal: Hellsinger - Gameplay";
-    }, []);
+    useTitle("Metal: Hellsinger - Gameplay");
 
     const navigate = useNavigate();
     const [isModalOpen, setModalOpen] = useState(false);

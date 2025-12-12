@@ -6,18 +6,18 @@ import BottomNav from '../../components/ui/BottomNav/BottomNav';
 import IconButton from '../../components/ui/IconButton/IconButton';
 
 import videoBg from '../../assets/backgrounds/screenshots_bg.mp4';
-import arrowIcon from '../../assets/menu/logo_reveal_button.png';
+import arrowIcon from '../../assets/menu/logo_reveal_button.webp';
 
-import screen1 from '../../assets/screenshots/Slides/png_slide_1.jpg';
-import screen2 from '../../assets/screenshots/Slides/png_slide_2.jpg';
-import screen3 from '../../assets/screenshots/Slides/png_slide_3.jpg';
-import screen4 from '../../assets/screenshots/Slides/png_slide_4.jpg';
-import screen5 from '../../assets/screenshots/Slides/png_slide_5.jpg';
-import screen6 from '../../assets/screenshots/Slides/png_slide_6.jpg';
-import screen7 from '../../assets/screenshots/Slides/png_slide_7.jpg';
-import screen8 from '../../assets/screenshots/Slides/png_slide_8.jpg';
-import screen9 from '../../assets/screenshots/Slides/png_slide_9.jpg';
-import screen10 from '../../assets/screenshots/Slides/png_slide_10.jpg';
+import screen1 from '../../assets/screenshots/Slides/png_slide_1.webp';
+import screen2 from '../../assets/screenshots/Slides/png_slide_2.webp';
+import screen3 from '../../assets/screenshots/Slides/png_slide_3.webp';
+import screen4 from '../../assets/screenshots/Slides/png_slide_4.webp';
+import screen5 from '../../assets/screenshots/Slides/png_slide_5.webp';
+import screen6 from '../../assets/screenshots/Slides/png_slide_6.webp';
+import screen7 from '../../assets/screenshots/Slides/png_slide_7.webp';
+import screen8 from '../../assets/screenshots/Slides/png_slide_8.webp';
+import screen9 from '../../assets/screenshots/Slides/png_slide_9.webp';
+import screen10 from '../../assets/screenshots/Slides/png_slide_10.webp';
 
 const screenshots = [screen1, screen2, screen3, screen4, screen5, screen6, screen7, screen8, screen9, screen10];
 

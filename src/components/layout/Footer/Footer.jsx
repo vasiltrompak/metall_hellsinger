@@ -5,9 +5,9 @@ import IconButton from '../../ui/IconButton/IconButton';
 
 import styles from './Footer.module.css';
 
-import musicIconOn from '../../../assets/menu/play_music_button_on.png';
-import musicIconOff from '../../../assets/menu/play_music_button.png';
-import logoRevealIcon from '../../../assets/menu/logo_reveal_button.png';
+import musicIconOn from '../../../assets/menu/play_music_button_on.webp';
+import musicIconOff from '../../../assets/menu/play_music_button.webp';
+import logoRevealIcon from '../../../assets/menu/logo_reveal_button.webp';
 
 const Footer = ({activePage, onLogoRevealClick, isMusicPlaying, onMusicToggle}) => {
     // console.log('Footer rendered with onLogoRevealClick:', onLogoRevealClick);

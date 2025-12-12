@@ -1,23 +1,23 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from './IntroductionPage.module.css';
 
+import {useTitle} from "../../hooks/useTitle.js";
+
 import videoBg from '../../assets/backgrounds/introduction_bg.mp4';
-import titleImg from '../../assets/introduction/metallhellsinger_title.png';
-import buyNowImg from '../../assets/introduction/buy_now.png';
+import titleImg from '../../assets/introduction/metallhellsinger_title.webp';
+import buyNowImg from '../../assets/introduction/buy_now.webp';
 
 const IntroductionPage = () => {
-    useEffect(()=>{
-        document.title = "Metal: Hellsinger - Introduction";
-    }, [])
+    useTitle("Metal: Hellsinger - Introduction");
 
     return (
         <div className={styles.page}>
             <video autoPlay muted loop className={styles.videoBg}>
-                <source src={videoBg} type="video/mp4" />
+                <source src={videoBg} type="video/mp4"/>
             </video>
 
             <main className={styles.content}>
-                <img src={titleImg} alt="Metal Hellsinger" className={styles.title} />
+                <img src={titleImg} alt="Metal Hellsinger" className={styles.title}/>
                 <a
                     href="https://store.steampowered.com/app/1061910/Metal_Hellsinger/"
                     className={styles.buyButton}
